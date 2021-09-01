@@ -6,6 +6,6 @@ services:
   -docker
 
 before_install:
-  - docker build -t symbioteAPI .
-  - docker run -d -p 9191:9191, 8443:8443 symbioteAPI
+  - docker build --build-arg JAR_FILE=build/libs/\*.jar  -t symbiote_api .
+  - docker run -d -p 9191:9191 -p 8443:8443 symbiote_api
   - docker ps -a

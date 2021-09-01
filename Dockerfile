@@ -12,7 +12,7 @@ ENV componentVersion 1.0
 #	bash \
 #    && echo "Downloading $componentName $componentVersion" \
 #	&& wget "https://jitpack.io/com/github/symbiote-h2020/$componentName/$componentVersion/$componentName-$componentVersion-run.jar"
-COPY ./build/libs/utils-1.1.0.jar utils-1.1.0.jar
+COPY ${JAR_FILE} utils.jar
 
 EXPOSE 9191, 8443
 
