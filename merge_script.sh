@@ -7,7 +7,7 @@ export GIT_COMMITTER_NAME='Travis CI'
 
 printf 'Removing staging branch as it has been handled already\n'
 printf 'git push %s :staging >/dev/null 2>&1\n' "$GITHUB_REPO"
-push_uri="https://GITHUB_ACCESS_TOKEN@github.com/$GITHUB_REPO"
+push_uri="https://$GITHUB_ACCESS_TOKEN@github.com/$GITHUB_REPO"
 #git push "$push_uri" :staging >/dev/null 2>&1
 
 # Preparing for merge
@@ -17,4 +17,4 @@ git config user.name "$GIT_COMMITTER_NAME"
 
 printf 'Pulling develop\n' >&2
 git fetch origin +develop:develop
-git merge develop --no-edit
+git merge develop
