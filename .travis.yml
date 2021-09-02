@@ -1,7 +1,4 @@
 language: bash
-env:
-  global:
-    - DOCKER_IMAGE_NAME= travis-test
 
 sudo: required
 
