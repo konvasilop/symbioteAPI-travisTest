@@ -1,4 +1,7 @@
 language: bash
+env:
+  global:
+    - DOCKER_IMAGE_NAME= travis-test
 
 sudo: required
 
@@ -13,7 +16,5 @@ before_script:
   - bash merge_script.sh
 after_success:
   - bash pushing_script.sh
-  - docker build --build-arg JAR_FILE=build/libs/\*.jar  -t symbiote_api .
-  - docker run -d -p 9191:9191 -p 8443:8443 symbiote_api
-  - docker ps -a
+  - bash docker_build.sh
   - bash docker_push.sh
