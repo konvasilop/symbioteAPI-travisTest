@@ -10,12 +10,10 @@ services:
   -docker
 
 before_script:
-  - chmod a+x merge_script.sh
-  - "./merge_script.sh"
+  - bash merge_script.sh
 after_success:
-  - chmod a+x pushing_script.sh
-  - "./pushing_script.sh"
+  - bash pushing_script.sh
   - docker build --build-arg JAR_FILE=build/libs/\*.jar  -t symbiote_api .
   - docker run -d -p 9191:9191 -p 8443:8443 symbiote_api
   - docker ps -a
-  - chmod a+x docker_push.sh
+  - bash docker_push.sh
