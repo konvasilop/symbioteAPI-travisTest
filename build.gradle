@@ -30,6 +30,7 @@ apply plugin: 'idea'
 // publishing
 apply plugin: 'com.cinnober.gradle.semver-git'
 
+
 // XXX please change with your commits according to http://semver.org/
 project.version = '1.1.0'
 
@@ -91,6 +92,8 @@ dependencies {
     // Test only
     testCompile('junit:junit:4.12')
     testCompile('org.springframework.boot:spring-boot-starter-test')
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.0.3'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.0.3'
 }
 
 test {
@@ -100,6 +103,11 @@ test {
     systemProperty "http.proxyPort", System.getProperty("http.proxyPort")
     systemProperty "https.proxyHost", System.getProperty("https.proxyHost")
     systemProperty "https.proxyPort", System.getProperty("https.proxyPort")
+    useJUnitPlatform()
+
+    // Show test results.
+    testLogging {
+        events "passed", "skipped", "failed"}
 }
 
 // code quality below
