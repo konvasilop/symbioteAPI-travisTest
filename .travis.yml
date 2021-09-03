@@ -1,4 +1,8 @@
-language: bash
+language: java
+
+os: linux
+dist: trusty
+jdk: oraclejdk8
 
 sudo: required
 
@@ -11,6 +15,11 @@ services:
 
 before_script:
   - bash merge_script.sh
+
+script:
+  - ./gradlew build --scan -s
+
+
 after_success:
   - bash pushing_script.sh
   - bash docker_build.sh
