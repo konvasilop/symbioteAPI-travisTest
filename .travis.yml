@@ -26,7 +26,8 @@ before_script:
   - bash merge_script.sh
 
 script:
-  - gradle check
+#  - gradle check
+  - /.gradlew check
 
 
 after_success:
