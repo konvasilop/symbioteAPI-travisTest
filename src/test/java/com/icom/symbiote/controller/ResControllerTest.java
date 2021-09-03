@@ -9,7 +9,7 @@ class ResControllerTest {
 
     @Test
     void postGetL2Res() {
-        assertTrue(true);
+        assertTrue(false);
         //
     }
 }
