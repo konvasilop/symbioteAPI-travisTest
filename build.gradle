@@ -103,7 +103,6 @@ test {
     systemProperty "http.proxyPort", System.getProperty("http.proxyPort")
     systemProperty "https.proxyHost", System.getProperty("https.proxyHost")
     systemProperty "https.proxyPort", System.getProperty("https.proxyPort")
-    useJUnitPlatform()
 
     // Show test results.
     testLogging {
