@@ -27,7 +27,7 @@ before_script:
 
 script:
 #  - gradle check
-  - /.gradlew check
+  - ./gradlew check
 
 
 after_success:
